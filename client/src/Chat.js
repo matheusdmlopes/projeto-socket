@@ -1,45 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
+import React, { useState, } from 'react';
+import './Chat.css';
+import useChat from './hooks/useChat';
 
-const socket = io('http://localhost:3000');
 
 const Chat = () => {
-    const [messages, setMessages] = useState([]);
+    const { messages, sendMessage } = useChat();
     const [inputMessage, setInputMessage] = useState('');
-
-    useEffect(() => {
-
-        socket.on('chat message', (msg) => {
-            setMessages((prevMessages) => [...prevMessages, msg]);
-        });
-
-        return () => {
-            socket.off('chat message');
-        };
-    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputMessage.trim()) {
-            socket.emit('chat message', inputMessage);
+            sendMessage(inputMessage);
             setInputMessage('');
         }
     };
 
     return (
-        <div>
-            <ul id="messages">
-                {messages.map((msg, index) => (
-                    <li key={index}>{msg}</li>
+        <div className="chat-container">
+            <h1>Real-time Chat</h1>
+            <ul className="message-list">
+                {messages.map((element, index) => (
+                    <li key={index} className="message">{element}</li>
                 ))}
             </ul>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="message-form">
                 <input
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     autoComplete="off"
+                    className="message-input"
+                    placeholder="Digite uma mensagem..."
                 />
-                <button type="submit">Send</button>
+                <button type="submit" className="send-button">Send</button>
             </form>
         </div>
     );
