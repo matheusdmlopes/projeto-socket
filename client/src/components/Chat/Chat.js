@@ -1,6 +1,6 @@
 import React, { useState, } from 'react';
 import './Chat.css';
-import useChat from './hooks/useChat';
+import useChat from '../../hooks/useChat';
 
 
 const Chat = () => {
