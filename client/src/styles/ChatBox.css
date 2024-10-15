@@ -32,7 +32,7 @@
 /* Mensagem enviada */
 
 .sent {
-  font-size: 18px;
+  font-size: 21px;
   background-color: #101712;
   color: #e5e5e5;
   align-self: flex-end;
@@ -45,7 +45,7 @@
 
 /* Mensagem recebida */
 .received {
-  font-size: 18px;
+  font-size: 21px;
   background-color: #848493;
   color: #e5e5e5;
   align-self: flex-start;

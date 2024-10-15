@@ -3,7 +3,7 @@ import useChat from "../hooks/useChat";
 import '../styles/ChatBox.css';
 
 const ChatBox: React.FC = () => {
-    const { messages, sendMessage } = useChat();
+    const { messages, sendMessage, userId } = useChat();
     const [inputMessage, setInputMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ const ChatBox: React.FC = () => {
                 <ul className="message-list">
                     {messages.map((element, index) => (
                         <li key={index}
-                            className={`message ${index % 2 == 0 ? 'sent' : 'received'}`}>{element}</li>
+                            className={`message ${element.sender === userId ? 'sent' : 'received'}`}>{element.content}</li>
                     ))}
                 </ul>
                 <form onSubmit={handleSubmit} className="message-form">
