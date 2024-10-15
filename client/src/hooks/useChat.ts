@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { io, Socket } from 'socket.io-client';
 import { Message } from "../types/message";
 
-const socket: Socket = io('http://192.168.x.x:3001');
+
+const SERVER_URL = import.meta.env.VITE_SERVER_URL
+
+const socket: Socket = io(SERVER_URL);
 
 const useChat = () => {
     const [messages, setMessages] = useState<Message[]>([]);

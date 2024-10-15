@@ -9,7 +9,7 @@ const socketHandler = (io: Server) => {
             // mensagem recebida do front-end no back-end e emitida pro front-end novamente
             const msg = { sender: socket.id, content: content }
             // io.emit('chat message', msg);
-            socket.broadcast.emit('chat message', msg);
+            io.emit('chat message', msg);
         })
 
         socket.on('disconnect', () => {
