@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 768px) {
-    header {
+    .header {
         font-size: 18px;
         padding: 10px;
     }
