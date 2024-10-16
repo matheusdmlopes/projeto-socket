@@ -92,6 +92,11 @@
 
 /* Media query para dispositivos móveis */
 @media (max-width: 768px) {
+  .chat-container {
+    height: 100vh;
+    padding: 0;
+  }
+
   .chat-box {
     width: 100%;
     /* Ocupar toda a largura */
