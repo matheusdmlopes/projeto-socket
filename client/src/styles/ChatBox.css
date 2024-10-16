@@ -89,3 +89,40 @@
 .send-button:hover {
   background-color: #651fff;
 }
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+  .chat-box {
+    width: 100%;
+    /* Ocupar toda a largura */
+    height: calc(100vh - 20px);
+    /* Ajustar altura */
+    border-radius: 0;
+    /* Sem bordas arredondadas */
+  }
+
+  .message {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .message-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .send-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .message-form {
+    padding: 5px;
+  }
+
+  .message-list {
+    padding: 5px;
+    gap: 4px;
+    /* Reduzir espaçamento entre mensagens */
+  }
+}
