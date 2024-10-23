@@ -90,44 +90,76 @@
   background-color: #651fff;
 }
 
-/* Media query para dispositivos móveis */
 @media (max-width: 768px) {
+
+  /* O contêiner principal ocupa toda a tela */
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* Evita rolagem horizontal */
+  }
+
   .chat-container {
     height: 100vh;
-    padding: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
   }
 
   .chat-box {
-    width: 100%;
-    /* Ocupar toda a largura */
-    height: calc(100vh - 20px);
-    /* Ajustar altura */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f5;
     border-radius: 0;
-    /* Sem bordas arredondadas */
-  }
-
-  .message {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .message-input {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .send-button {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .message-form {
-    padding: 5px;
+    overflow-y: auto;
+    /* Permite rolar apenas na vertical */
+    width: 100%;
   }
 
   .message-list {
-    padding: 5px;
-    gap: 4px;
-    /* Reduzir espaçamento entre mensagens */
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Barra de input fixa no final da tela */
+  .message-form {
+    display: flex;
+    padding: 8px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    /* Mantém o input sempre visível */
+    bottom: 0;
+    /* Fixa no final da tela */
+    left: 0;
+  }
+
+  .message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-right: 10px;
+    outline: none;
+  }
+
+  .send-button {
+    padding: 10px 15px;
+    background-color: #4c4c4c;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
   }
 }
