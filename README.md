@@ -80,6 +80,12 @@ http://localhost:3000
 
 ![alt text](image.png)
 
+
+```bash
+# Na pasta client/
+npm run dev -- --host
+```
+
 ---
 
 ## 📞 Contato
