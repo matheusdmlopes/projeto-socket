@@ -28,6 +28,7 @@ const ChatBox: React.FC = () => {
                             style={{ maxWidth: 'fit-content', display: 'block' }}
                         >
                             <div>
+                                <div className="message-sender" style={{ fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '5px' }}>Anônimo</div>
                                 <span>{element.content}</span>
                                 <span className="ms-2" style={{ fontSize: '0.8rem' }}>{element.timestamp}</span>
                             </div>
