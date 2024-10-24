@@ -20,7 +20,7 @@ const ChatBox: React.FC = () => {
 
     return (
         <div className="container d-flex flex-column align-items-center vh-100">
-            <div className="chat-box border rounded p-3 w-100" style={{ maxWidth: '900px' }}>
+            <div className="chat-box border rounded p-3 w-100 bg-secondary" style={{ maxWidth: '900px' }}>
                 <ul className="list-unstyled message-list mb-3 overflow-auto" style={{ height: '70vh', wordWrap: 'break-word' }}>
                     {messages.map((element, index) => (
                         <li key={index}
