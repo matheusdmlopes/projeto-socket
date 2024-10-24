@@ -3,13 +3,14 @@ import { io, Socket } from 'socket.io-client';
 import { Message } from "../types/message";
 
 
-const SERVER_URL = import.meta.env.VITE_BACKEND_URL
+const SERVER_URL = import.meta.env.VITE_LOCAL_URL
 
 const socket: Socket = io(SERVER_URL);
 
 const useChat = () => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [userId, setUserId] = useState<string | null>(null);
+    const [onlineUsers, setOnlineUsers] = useState<number>(0)
 
     useEffect(() => {
         socket.on('connect', () => {
@@ -24,8 +25,13 @@ const useChat = () => {
             setMessages((prevMessages) => [...prevMessages, msg]);
         })
 
+        socket.on('users online', (count: number) => {
+            setOnlineUsers(count);
+        })
+
         return () => {
             socket.off('chat message')
+            socket.off('users online')
         }
     }, [])
 
@@ -36,7 +42,7 @@ const useChat = () => {
         }
     }
 
-    return { messages, sendMessage, userId }
+    return { messages, sendMessage, userId, onlineUsers }
 }
 
 export default useChat;

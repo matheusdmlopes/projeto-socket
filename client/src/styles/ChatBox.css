@@ -1,4 +1,4 @@
-.chat-container {
+/* .chat-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,6 @@
   height: 100%;
 }
 
-/* Caixa principal do chat */
 .chat-box {
   width: 900px;
   height: 600px;
@@ -18,7 +17,7 @@
   overflow: hidden;
 }
 
-/* Lista de mensagens */
+
 .message-list {
   flex: 1;
   overflow-y: auto;
@@ -29,7 +28,7 @@
   gap: 12px;
 }
 
-/* Mensagem enviada */
+
 
 .sent {
   font-size: 21px;
@@ -37,26 +36,26 @@
   color: #e5e5e5;
   align-self: flex-end;
   border-radius: 15px 15px 0 15px;
-  /* Arredondamento dos cantos */
+
   padding: 10px;
   max-width: 75%;
   word-wrap: break-word;
 }
 
-/* Mensagem recebida */
+
 .received {
   font-size: 21px;
   background-color: #848493;
   color: #e5e5e5;
   align-self: flex-start;
   border-radius: 15px 15px 15px 0;
-  /* Arredondamento dos cantos */
+
   padding: 10px;
   max-width: 75%;
   word-wrap: break-word;
 }
 
-/* Formulário de envio */
+
 .message-form {
   display: flex;
   padding: 10px;
@@ -64,7 +63,7 @@
   border-top: 1px solid #6f6f6f;
 }
 
-/* Input da mensagem */
+
 .message-input {
   flex: 1;
   padding: 10px;
@@ -75,7 +74,7 @@
   outline: none;
 }
 
-/* Botão de enviar */
+
 .send-button {
   background-color: #4f4f4f;
   color: white;
@@ -92,7 +91,7 @@
 
 @media (max-width: 768px) {
 
-  /* O contêiner principal ocupa toda a tela */
+
   body,
   html {
     margin: 0;
@@ -100,7 +99,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    /* Evita rolagem horizontal */
+
   }
 
   .chat-container {
@@ -117,7 +116,7 @@
     background-color: #f0f0f5;
     border-radius: 0;
     overflow-y: auto;
-    /* Permite rolar apenas na vertical */
+
     width: 100%;
   }
 
@@ -130,7 +129,7 @@
     gap: 10px;
   }
 
-  /* Barra de input fixa no final da tela */
+
   .message-form {
     display: flex;
     padding: 8px;
@@ -139,9 +138,9 @@
     width: 100%;
     box-sizing: border-box;
     position: absolute;
-    /* Mantém o input sempre visível */
+
     bottom: 0;
-    /* Fixa no final da tela */
+
     left: 0;
   }
 
@@ -162,4 +161,4 @@
     border-radius: 15px;
     cursor: pointer;
   }
-}
+} */
