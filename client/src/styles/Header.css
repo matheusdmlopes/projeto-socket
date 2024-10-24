@@ -1,4 +1,4 @@
-.header {
+/* .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,7 +23,6 @@
         background-color: #2c2c3e;
         color: white;
         font-size: 22px;
-        /* Ajuste do tamanho da fonte */
         font-weight: bold;
         text-align: center;
         padding: 10px;
@@ -31,6 +30,5 @@
         box-sizing: border-box;
         overflow: hidden;
         white-space: normal;
-        /* Permite quebra de linha se necessário */
     }
-}
+} */

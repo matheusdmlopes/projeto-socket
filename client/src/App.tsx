@@ -5,11 +5,9 @@ import './styles/App.css'
 
 const App: React.FC = () => {
   return (
-    <div className="app-container">
+    <div className="container-fluid d-flex flex-column vh-100 bg-secondary">
       <Header />
-      <div className="chat-content">
-        <ChatBox />
-      </div>
+      <ChatBox />
     </div>
   )
 }

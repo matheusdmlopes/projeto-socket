@@ -17,7 +17,7 @@ Esta é uma aplicação de chat em tempo real, onde diversos usuários podem se 
 - **Front-end:**
   - React + TypeScript
   - Vite
-  - CSS modular
+  - Bootstrap
 
 - **Back-end:**
   - Node.js

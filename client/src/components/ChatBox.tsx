@@ -19,21 +19,28 @@ const ChatBox: React.FC = () => {
     }
 
     return (
-        <div className="chat-container">
-            <div className="chat-box">
-                <ul className="message-list">
+        <div className="container d-flex flex-column align-items-center vh-100">
+            <div className="chat-box border rounded p-3 w-100" style={{ maxWidth: '900px' }}>
+                <ul className="list-unstyled message-list mb-3 overflow-auto" style={{ height: '70vh', wordWrap: 'break-word' }}>
                     {messages.map((element, index) => (
                         <li key={index}
-                            className={`message ${element.sender === userId ? 'sent' : 'received'}`}>{element.content}</li>
+                            className={`message p-2 mb-3 rounded ${element.sender === userId ? 'bg-dark text-white ms-auto' : 'bg-light text-body me-auto'}`}
+                            style={{ maxWidth: 'fit-content', display: 'block' }}
+                        >
+                            <div>
+                                <span>{element.content}</span>
+                                <span className="ms-2" style={{ fontSize: '0.8rem' }}>{element.timestamp}</span>
+                            </div>
+                        </li>
                     ))}
                 </ul>
-                <form onSubmit={handleSubmit} className="message-form">
+                <form onSubmit={handleSubmit} className="d-flex">
                     <input value={inputMessage}
                         onChange={handleChange}
                         placeholder="Digite uma mensagem..."
-                        className="message-input"
+                        className="form-control me-2"
                     ></input>
-                    <button type="submit" className="send-button">Enviar</button>
+                    <button type="submit" className="btn btn-secondary">Enviar</button>
                 </form>
             </div>
         </div>
