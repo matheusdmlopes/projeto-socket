@@ -1,10 +1,10 @@
-module.exports = {
-    transform: {
-        "^.+\\.[t|j]sx?$": "babel-jest",
-    },
-    testEnvironment: 'jsdom',
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-};
+// module.exports = {
+//     transform: {
+//         "^.+\\.[t|j]sx?$": "babel-jest",
+//     },
+//     testEnvironment: 'jsdom',
+//     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+// };
 
 // import type { Config } from '@jest/types';
 

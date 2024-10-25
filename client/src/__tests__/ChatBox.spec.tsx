@@ -1,18 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ChatBox from '../components/ChatBox';
 
-beforeAll(() => {
-    Object.defineProperty(global, 'import', {
-        value: {
-            meta: {
-                env: {
-                    VITE_LOCAL_URL: 'http://localhost:3001', // Ou qualquer valor necessário
-                },
-            },
-        },
-    });
-});
-
 
 describe("ChatBox", () => {
     test('demo', () => {
