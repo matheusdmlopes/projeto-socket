@@ -41,7 +41,7 @@ const ChatBox: React.FC = () => {
                         placeholder="Digite uma mensagem..."
                         className="form-control me-2"
                     ></input>
-                    <button type="submit" className="btn btn-secondary">Enviar</button>
+                    <button type="submit" className="btn btn-light">Enviar</button>
                 </form>
             </div>
         </div>
