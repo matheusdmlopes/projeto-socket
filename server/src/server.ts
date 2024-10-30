@@ -4,7 +4,7 @@ import http from 'http';
 import cors from 'cors';
 import socketHandler from './socket';
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
