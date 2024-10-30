@@ -1,4 +1,3 @@
-import { timeStamp } from 'console';
 import { Server, Socket } from 'socket.io';
 
 let onlineUsers = 0;

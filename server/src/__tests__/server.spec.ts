@@ -5,6 +5,7 @@ import { io as ioc, type Socket as ClientSocket } from "socket.io-client";
 import { Server, type Socket as ServerSocket } from "socket.io";
 import socketHandler from "../socket";
 import "../server";
+import '../socket';
 import request from 'supertest';
 import { server } from "../server";
 
@@ -67,7 +68,22 @@ describe("Socket.IO Server", () => {
         });
     });
 
+    it("deve enviar uma mensagem do cliente e emitir para todos os clientes", async () => {
+        const messageContent = "Hello, world!";
+        const fixedDate = new Date('2024-10-28T12:00:00');
 
+        vi.setSystemTime(fixedDate);
+
+        const expectedTimestamp = fixedDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        clientSocket.emit("chat message", messageContent);
+
+        const message: any = await waitFor(clientSocket2, "chat message");
+
+        expect(message.content).toBe(messageContent);
+        expect(message.sender).toBe(clientSocket.id);
+        expect(message.timestamp).toBe(expectedTimestamp);
+    });
 
     it("deve desconectar um cliente e emitir o evento de usuários online", () => {
         clientSocket2.on("disconnect", () => {
