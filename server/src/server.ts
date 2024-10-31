@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://projeto-socket.vercel.app/",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 })
