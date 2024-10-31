@@ -4,7 +4,7 @@ import { Message } from "../types/message";
 
 
 
-const SERVER_URL = import.meta.env.VITE_LOCAL_URL;
+const SERVER_URL = import.meta.env.VITE_BACKEND_URL;
 
 const socket: Socket = io(SERVER_URL);
 
