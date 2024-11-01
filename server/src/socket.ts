@@ -6,7 +6,8 @@ const socketHandler = (io: Server) => {
 
     io.on('connection', (socket: Socket) => {
         onlineUsers++;
-        console.log(`usuário conectado: ${socket.id}`)
+        const UserAgent = socket.handshake.headers['user-agent'];
+        console.log(`usuário conectado: ${socket.id}, UserAgent: ${UserAgent} `);
 
         io.emit('users online', onlineUsers);
 
