@@ -23,7 +23,9 @@ const useChat = () => {
 
         socket.on('chat message', (msg: Message) => {
             // Mensagem recebida do back-end no front-end
-            setMessages((prevMessages) => [...prevMessages, msg]);
+            const localTimestamp = new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const localMsg = { ...msg, timestamp: localTimestamp };
+            setMessages((prevMessages) => [...prevMessages, localMsg]);
         })
 
         socket.on('users online', (count: number) => {

@@ -12,7 +12,7 @@ const socketHandler = (io: Server) => {
 
         socket.on('chat message', (content: string) => {
             // mensagem recebida do front-end no back-end e emitida pro front-end novamente
-            const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            const timestamp = new Date().toISOString();
             const msg = { sender: socket.id, content, timestamp }
             io.emit('chat message', msg);
         })
