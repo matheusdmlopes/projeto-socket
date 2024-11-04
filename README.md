@@ -35,7 +35,7 @@ Esta é uma aplicação de chat em tempo real, onde diversos usuários podem se 
   - React Testing Library
 ---
 
-## ⚙️ Como Rodar o Projeto Localmente
+## ⚙️ Como Rodar o Projeto Localmente (instruções para máquinas Linux)
 
 ### Pré-requisitos
 - **Node.js** instalado (versão 18+)
@@ -104,6 +104,8 @@ npm run dev
 # Na pasta client/
 npm run dev -- --host
 ```
+
+Em seguida basta acessar a mesma URL da variável criada no .env estando conectado na mesma rede da máquina host.
 
 ---
 
