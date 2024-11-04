@@ -39,7 +39,7 @@ describe("useChat Hook", () => {
             if (connectHandler) connectHandler();
         });
 
-        expect(result.current.userId).toBe('mockUserId');
+        expect(result.current.userID).toBe('mockUserId');
     });
 
     test("adiciona uma mensagem ao receber 'chat message'", () => {
