@@ -8,7 +8,7 @@ Esta é uma aplicação de chat em tempo real, onde diversos usuários podem se 
 - **Sistema dinâmico de mensagens:** As suas mensagens são alinhadas à direita e as dos outros usuários à esquerda.
 - **Conectividade via LAN e Rede Local:** Possibilidade de testar o chat entre dispositivos na mesma rede.
 - **Arquitetura modular:** Separação de componentes e lógica de estado para maior manutenção e escalabilidade.
-- **Estilo moderno e limpo:** Uso de CSS customizado para uma interface minimalista e agradável.
+- **Estilo moderno e limpo:** Uso de Bootstrap para uma interface minimalista e agradável.
 
 ---
 
@@ -21,11 +21,14 @@ Esta é uma aplicação de chat em tempo real, onde diversos usuários podem se 
 
 - **Back-end:**
   - Node.js
+  - Express
   - Socket.IO (para comunicação em tempo real)
 
 - **Ferramentas de Desenvolvimento:**
   - Visual Studio Code
   - Git & GitHub
+  - Railway (para deploy do back-end)
+  - Vercel (Para deploy do front-end)
 
 - **Testes:**
   - Vitest
@@ -37,7 +40,7 @@ Esta é uma aplicação de chat em tempo real, onde diversos usuários podem se 
 ### Pré-requisitos
 - **Node.js** instalado (versão 18+)
 - **Git** para clonar o repositório
-- **Vite** para rodar o front-end
+- **NPM** para instalação de dependências
 - **LAN ou Rede Local** (para testes de comunicação entre dispositivos)
 
 ### Instalação e Configuração
@@ -62,9 +65,19 @@ npm install
 cd server
 npm install
 
+# Crie o arquivo .env na pasta client
+
+cd ../client
+touch .env
+
+# Crie a variável VITE_BACKEND_URL no .env
+
+VITE_BACKEND_URL=http://localhost:3000
+
 # Inicie o servidor (back-end)
 
 cd server
+npm run build
 npm run dev
 
 # Inicie o cliente (front-end)
@@ -79,12 +92,15 @@ http://localhost:3000
 
 ## Teste em Rede Local/LAN
 
-### No arquivo useChat.ts, altere o parâmetro passado pra função io('...') pro IP da sua máquina local.
+### No arquivo .env criado, altere o valor da variavel de URL do backend pro IP da sua máquina local.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 
 ```bash
+# Na pasta server/
+npm run dev
+
 # Na pasta client/
 npm run dev -- --host
 ```
