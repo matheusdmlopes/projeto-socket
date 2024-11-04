@@ -3,7 +3,7 @@ import useChat from "../hooks/useChat";
 import '../styles/ChatBox.css';
 
 const ChatBox: React.FC = () => {
-    const { messages, sendMessage, userId } = useChat();
+    const { messages, sendMessage, userID } = useChat();
     const [inputMessage, setInputMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ const ChatBox: React.FC = () => {
                 <ul className="list-unstyled message-list mb-3 overflow-auto" style={{ height: '70vh', wordWrap: 'break-word' }}>
                     {messages.map((element, index) => (
                         <li key={index}
-                            className={`message p-2 mb-3 rounded ${element.sender === userId ? 'bg-dark text-white ms-auto' : 'bg-light text-body me-auto'}`}
+                            className={`message p-2 mb-3 rounded ${element.sender === userID ? 'bg-dark text-white ms-auto' : 'bg-light text-body me-auto'}`}
                             style={{ maxWidth: 'fit-content', display: 'block' }}
                         >
                             <div>

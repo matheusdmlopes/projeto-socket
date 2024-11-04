@@ -13,13 +13,14 @@ const socketHandler = (io: Server) => {
 
     io.on('connection', (socket: Socket) => {
 
+        const userID = socket.handshake.query.userID as string;
         const userAgent = socket.handshake.headers['user-agent'];
         const connectedAt = new Date().toISOString();
 
-        connectedUsers.push({ id: socket.id, userAgent, connectedAt })
+        connectedUsers.push({ id: userID, userAgent, connectedAt })
         onlineUsers++;
 
-        console.log(`usuário conectado: ${socket.id}, UserAgent: ${userAgent} `);
+        console.log(`usuário conectado: ${userID}`);
 
         io.emit('users online', onlineUsers);
 
@@ -28,14 +29,14 @@ const socketHandler = (io: Server) => {
         socket.on('chat message', (content: string) => {
             // mensagem recebida do front-end no back-end e emitida pro front-end novamente
             const timestamp = new Date().toISOString();
-            const msg = { sender: socket.id, content, timestamp }
+            const msg = { sender: userID, content, timestamp }
             io.emit('chat message', msg);
         })
 
         socket.on('disconnect', () => {
-            connectedUsers = connectedUsers.filter(user => user.id !== socket.id);
+            connectedUsers = connectedUsers.filter(user => user.id !== userID);
             onlineUsers--;
-            console.log(`usuário desconectado: ${socket.id}`);
+            console.log(`usuário desconectado: ${userID}`);
             console.log('Usuários atualmente conectados:', connectedUsers);
             io.emit('users online', onlineUsers);
         })
