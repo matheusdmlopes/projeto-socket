@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
 import ChatBox from "./components/ChatBox";
-import './styles/App.css'
 
 const App: React.FC = () => {
   return (

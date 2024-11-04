@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import useChat from "../hooks/useChat";
-import '../styles/ChatBox.css';
 
 const ChatBox: React.FC = () => {
     const { messages, sendMessage, userID } = useChat();
