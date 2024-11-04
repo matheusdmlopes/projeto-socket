@@ -1,5 +1,4 @@
 import React from "react";
-import '../styles/Header.css'
 import useChat from "../hooks/useChat";
 
 const Header: React.FC = () => {
