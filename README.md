@@ -27,6 +27,9 @@ Esta é uma aplicação de chat em tempo real, onde diversos usuários podem se 
   - Visual Studio Code
   - Git & GitHub
 
+- **Testes:**
+  - Vitest
+  - React Testing Library
 ---
 
 ## ⚙️ Como Rodar o Projeto Localmente
